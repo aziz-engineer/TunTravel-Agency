@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TunTravel - Your Dream Vacation Awaits</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#0ea5e9',
+            accent: '#f97316',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.8s ease-in-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+            'bounce-slow': 'bounce 2s infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0', transform: 'translateY(20px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(30px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 min-h-screen">
+
+<!-- Floating Buttons -->
+<div class="fixed bottom-6 right-6 space-y-4 z-50 lg:bottom-8">
+  
+</div>
+
+<!-- Navbar -->
+<nav class="fixed w-full top-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-200/50 dark:border-gray-700/50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4 lg:py-6">
+      <!-- Logo -->
+      <div class="animate-bounce">
+        <a href="#" class="text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent hover:scale-105 transition-transform duration-300">
+          TunTravel
+        </a>
+      </div>
+
+      <!-- Desktop Menu -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="#home" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 py-2">Home</a>
+        <a href="#destinations" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 py-2">Destinations</a>
+        <a href="#services" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 py-2">Services</a>
+        <a href="#gallery" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 py-2">Gallery</a>
+        <a href="#contact" class="text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary transition-colors duration-300 py-2">Contact</a>
+      </div>
+
+      <!-- Button reserve -->
+      <a href="#reservation" class="hidden lg:inline-flex px-8 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+        Book Now
+      </a>
+
+      
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="lg:hidden hidden pb-8 space-y-4 pt-2 border-t border-gray-200/50 dark:border-gray-700/50">
+      <a href="#home" class="block px-4 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg">Home</a>
+      <a href="#destinations" class="block px-4 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg">Destinations</a>
+      <a href="#services" class="block px-4 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg">Services</a>
+      <a href="#gallery" class="block px-4 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg">Gallery</a>
+      <a href="#contact" class="block px-4 py-3 text-lg font-medium text-gray-700 dark:text-gray-300 hover:text-primary hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 rounded-lg">Contact</a>
+      <a href="#reservation" class="block px-6 py-4 mx-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Promo Banner -->
+<section class="relative w-full h-48 lg:h-64 bg-gradient-to-r from-accent to-orange-500 flex items-center justify-center overflow-hidden">
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="relative z-10 text-center text-white px-6">
+    <h2 class="text-2xl lg:text-4xl font-bold mb-2 animate-pulse">🌟 Summer Sale: 40% ON! 🌟</h2>
+    <p class="text-lg lg:text-xl opacity-90">Book now and save big on your dream vacation!</p>
+  </div>
+</section>
+
+<!-- principal Section -->
+<section id="home" class="pt-32 pb-24 lg:pt-44 lg:pb-32 bg-gradient-to-br from-blue-600 via-primary to-indigo-600 relative overflow-hidden">
+  <div class="absolute inset-0 bg-black/10"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <div class="max-w-4xl mx-auto animate-fade-in">
+      <h1 class="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+        Discover <span class="bg-gradient-to-r from-accent to-orange-400 bg-clip-text text-transparent">Tunisia</span>
+        <br>
+        <span class="text-5xl md:text-7xl lg:text-8xl">Like Never Before</span>
+      </h1>
+      <p class="text-xl md:text-2xl lg:text-3xl mb-10 opacity-90 max-w-3xl mx-auto leading-relaxed">Experience the most breathtaking destinations with our expert guides and luxury services</p>
+      
+      <!-- cards of tours completed and destinations -->
+      <div class="grid  md:grid-cols-4 gap-6 lg:gap-8 mb-12 max-w-4xl mx-auto">
+        
+        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-3xl hover:bg-white/20 transition-all duration-500">
+          <div class="text-3xl lg:text-4xl font-black text-accent mb-2">500+</div>
+          <div class="text-lg font-semibold">Tours Completed</div>
+        </div>
+        <div class="text-center p-6 bg-white/10 backdrop-blur-sm rounded-3xl hover:bg-white/20 transition-all duration-500">
+          <div class="text-3xl lg:text-4xl font-black text-accent mb-2">50+</div>
+          <div class="text-lg font-semibold">Destinations</div>
+        </div>
+      </div>
+
+      <!-- 2 Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto">
+        <a href="#reservation" class="px-12 py-5 bg-gradient-to-r from-accent to-orange-500 text-white font-bold text-xl rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+          <span>Book Your Trip</span>
+          <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+          </svg>
+        </a>
+        <a href="#destinations" class="px-12 py-5 border-4 border-white/30 dark:border-white/50 text-white font-bold text-xl rounded-3xl hover:bg-white/20 backdrop-blur-sm hover:scale-105 transition-all duration-300 flex items-center space-x-3 group">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+          </svg>
+          <span>Explore</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Destinations Section -->
+<section id="destinations" class="py-24 lg:py-32 bg-white/50 dark:bg-gray-900/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 animate-slide-up">
+      <span class="inline-flex px-4 py-2 bg-secondary/20 text-secondary font-semibold rounded-full text-sm mb-6">🏖️ Top Destinations</span>
+      <h2 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-6">Explore Our Best Destinations</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Discover the most beautiful places in Tunisia with our carefully curated tours and experiences</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+      <!-- Destination Card 1 -->
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-[1.02]">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop" alt="Sidi Bou Said" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg group-hover:text-accent transition-colors">Sidi Bou Said</h3>
+            <p class="text-blue-100 text-lg drop-shadow-md">Blue & White Paradise</p>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <div class="text-2xl">⭐ 4.7</div>
+          </div>
+          <a href="#" class="w-full block text-center px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-bold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 group-hover:bg-accent">Discover Now</a>
+        </div>
+      </div>
+
+      <!-- Destination Card 2 -->
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-[1.02]">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img src="https://www.discovertunisia.com/en/sites/default/files/djerba3_0.jpg" alt="Djerba" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg group-hover:text-accent transition-colors">Djerba Island</h3>
+            <p class="text-blue-100 text-lg drop-shadow-md">Beach Paradise</p>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+                <span class="px-4 py-2 bg-accent/20 text-accent font-semibold rounded-full text-sm">🏖️ Beach</span>
+            <div class="text-2xl">⭐ 4.7</div>
+          </div>
+          <a href="#" class="w-full block text-center px-8 py-4 bg-gradient-to-r from-accent to-orange-500 text-white font-bold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 group-hover:bg-primary">Discover Now</a>
+        </div>
+      </div>
+
+      <!-- Destination Card 3 -->
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-[1.02]">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.P43r_uKZl63RvdWq6TkKygHaHa?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Sahara Desert" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg group-hover:text-accent transition-colors">Sahara Desert</h3>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-4 py-2 bg-secondary/20 text-secondary font-semibold rounded-full text-sm">🏜️ Adventure</span>
+            <div class="text-2xl">⭐ 4.9</div>
+          </div>
+          <a href="#" class="w-full block text-center px-8 py-4 bg-gradient-to-r from-secondary to-sky-400 text-white font-bold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 group-hover:bg-primary">Discover Now</a>
+        </div>
+      </div>
+
+      <!-- Destination Card 4 -->
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl shadow-xl hover:shadow-2xl overflow-hidden transition-all duration-500 hover:-translate-y-4 hover:scale-[1.02]">
+        <div class="relative h-64 lg:h-72 overflow-hidden">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.V_CUfZA95JE2KoZfxrF_TQHaFN?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Carthage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-6 left-6 right-6">
+            <h3 class="text-2xl font-bold text-white mb-2 drop-shadow-lg group-hover:text-accent transition-colors">Carthage Ruins</h3>
+            <p class="text-blue-100 text-lg drop-shadow-md">Historical Site</p>
+          </div>
+        </div>
+        <div class="p-8">
+          <div class="flex items-center justify-between mb-4">
+            <span class="px-4 py-2 bg-primary/20 text-primary font-semibold rounded-full text-sm">🏛️ History</span>
+            <div class="text-2xl">⭐ 4.7</div>
+          </div>
+          <a href="#" class="w-full block text-center px-8 py-4 bg-gradient-to-r from-primary to-blue-600 text-white font-bold rounded-2xl hover:shadow-xl hover:scale-105 transition-all duration-300 group-hover:bg-accent">Discover Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 animate-slide-up">
+      <span class="inline-flex px-4 py-2 bg-accent/20 text-accent font-semibold rounded-full text-sm mb-6">✨ Our Services</span>
+      <h2 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-6">Premium Travel Services</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Everything you need for an unforgettable journey</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+      <!-- Service Cards -->
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:border-primary/30">
+        <div class="w-20 h-20 bg-gradient-to-r from-primary to-secondary rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">Hotel Booking</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Luxury accommodations from 5-star resorts to boutique hotels</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent rounded-full mx-auto group-hover:w-32 transition-all duration-300"></div>
+      </div>
+
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:border-accent/30">
+        <div class="w-20 h-20 bg-gradient-to-r from-accent to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-accent transition-colors">Flight Tickets</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Best prices on domestic and international flights</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-accent to-transparent rounded-full mx-auto group-hover:w-32 transition-all duration-300"></div>
+      </div>
+
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:border-secondary/30">
+        <div class="w-20 h-20 bg-gradient-to-r from-secondary to-sky-400 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-secondary transition-colors">Tour Guides</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Expert local guides for authentic experiences</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-secondary to-transparent rounded-full mx-auto group-hover:w-32 transition-all duration-300"></div>
+      </div>
+
+      <div class="group relative bg-white dark:bg-gray-800 rounded-3xl p-10 text-center shadow-xl hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 border border-gray-100 dark:border-gray-700 hover:border-primary/30">
+        <div class="w-20 h-20 bg-gradient-to-r from-primary to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-primary transition-colors">24/7 Support</h3>
+        <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">Round-the-clock assistance for peace of mind</p>
+        <div class="w-24 h-1 bg-gradient-to-r from-primary to-transparent rounded-full mx-auto group-hover:w-32 transition-all duration-300"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 animate-slide-up">
+      <span class="inline-flex px-4 py-2 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent font-semibold rounded-full text-sm mb-6 tracking-wide">📸 Gallery</span>
+      <h2 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-6">Moments That Matter</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Relive the magic through our travelers' eyes</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
+      <!-- Gallery Images -->
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="Gallery 1" class="w-full h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+          <div>
+            <h4 class="text-xl font-bold text-white mb-1">Sahara Sunset</h4>
+            <p class="text-blue-100 text-sm">Magical moments</p>
+          </div>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?w=800&h=600&fit=crop" alt="Gallery 2" class="w-full h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+          <div>
+            <h4 class="text-xl font-bold text-white mb-1">Blue City</h4>
+            <p class="text-blue-100 text-sm">Sidi Bou Said</p>
+          </div>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+        <img src="https://www.purevacations.com/wp-content/uploads/2022/09/Mediterranean-coast-from-Djerba-Island-Tunisia.-1024x683.jpg" alt="Gallery 3" class="w-full h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+          <div>
+            <h4 class="text-xl font-bold text-white mb-1">Beach Paradise</h4>
+            <p class="text-blue-100 text-sm">Djerba Island</p>
+          </div>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop" alt="Gallery 4" class="w-full h-64 lg:h-72 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+          <div>
+            <h4 class="text-xl font-bold text-white mb-1">Ancient Ruins</h4>
+            <p class="text-blue-100 text-sm">Carthage</p>
+          </div>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 lg:col-span-2">
+        <img src="https://cdn.tourradar.com/s3/tour/1500x800/126619_7ae7282e.jpg" alt="Gallery 5" class="w-full h-72 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-8">
+          <div>
+            <h4 class="text-2xl font-bold text-white mb-2">Desert Adventure</h4>
+            <p class="text-blue-100 text-lg">Unforgettable journey</p>
+          </div>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 lg:col-span-2">
+        <img src="https://image.resabooking.com/images/image_panoramique/la_foret_ain_draham_3.jpg" alt="Gallery 5" class="w-full h-72 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-8">
+          <div>
+            <h4 class="text-2xl font-bold text-white mb-2">Ain drahem</h4>
+            <p class="text-blue-100 text-lg">Hotel La Foret Ain Draham</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Section -->
+<section class="py-24 lg:py-32 bg-gradient-to-br from-primary to-indigo-600">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-4xl mx-auto animate-slide-up">
+      <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">Watch Our Adventure</h2>
+      <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto opacity-90 leading-relaxed">See what makes TunTravel the best choice for your next vacation</p>
+      
+      <div class="relative w-full max-w-4xl mx-auto rounded-3xl shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-500 hover:scale-[1.02]">
+        <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-transparent z-10 flex items-center justify-center">
+          <button class="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition-all duration-300 group relative z-20 hover:scale-110">
+            <svg class="w-12 h-12 text-white ml-2 group-hover:ml-3 transition-all duration-300" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+                    </div>
+        <div>
+          <iframe width="975" height="422" src="https://www.youtube.com/embed/N_TkSN7_T5k" title="What I wish I knew before visiting TUNISIA | Ultimate Travel Guide 2025 - food, transport, safety" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-24 lg:py-32 bg-white dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-20 animate-slide-up">
+      <span class="inline-flex px-4 py-2 bg-gradient-to-r from-accent via-orange-500 to-red-500 bg-clip-text text-transparent font-semibold rounded-full text-sm mb-6 tracking-wide">💬 What Travelers Say</span>
+      <h2 class="text-4xl lg:text-5xl font-black text-gray-900 dark:text-white mb-6">Loved by Thousands</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">Don't just take our word for it</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Testimonial Cards -->
+      <div class="group relative bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 border border-gray-100/50 dark:border-gray-700/50">
+        <div class="flex items-center mb-6">
+          <img src="https://lachula-mariscos.com/_next/image?url=https:%2F%2Fimages.unsplash.com%2Fphoto-1614204424926-196a80bf0be8%3Fcrop%3Dentropy%26cs%3Dtinysrgb%26fit%3Dmax%26fm%3Djpg%26ixid%3DMnwyNjI5NjF8MHwxfHNlYXJjaHwzM3x8cG9ydHJhaXR8ZW58MHx8fHwxNjgwNzMwMjU2%26ixlib%3Drb-4.0.3%26q%3D80%26w%3D1080&w=1920&q=90" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover shadow-2xl mr-4">
+          <div>
+            <h4 class="font-bold text-xl text-gray-900 dark:text-white">Sarah Johnson</h4>
+            <span class="text-accent font-semibold">New York, USA</span>
+          </div>
+        </div>
+        <div class="flex mb-6">
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-lg text-gray-700 dark:text-gray-300 italic  mb-8">Reserving my vacation with TunTravel was one of the greatest moments! Your agency made everything so easy and unforgettable — I’ll always remember this experience with happiness .</p>
+        <div class="w-20 h-1 bg-gradient-to-r from-accent to-transparent rounded-full"></div>
+      </div>
+
+      <div class="group relative bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 border border-gray-100/50 dark:border-gray-700/50">
+        <div class="flex items-center mb-6">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover shadow-2xl mr-4">
+          <div>
+            <h4 class="font-bold text-xl text-gray-900 dark:text-white">Michael Chen</h4>
+            <span class="text-accent font-semibold">Toronto, Canada</span>
+          </div>
+        </div>
+        <div class="flex mb-6">
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-lg text-gray-700 dark:text-gray-300 italic leading-relaxed mb-8">Best travel experience ever! The Sahara tour was life-changing. Highly recommend TunTravel to everyone !</p>
+        <div class="w-20 h-1 bg-gradient-to-r from-accent to-transparent rounded-full"></div>
+      </div>
+
+      <div class="group relative bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-3xl p-10 shadow-xl hover:shadow-2xl hover:-translate-y-4 transition-all duration-500 border border-gray-100/50 dark:border-gray-700/50">
+        <div class="flex items-center mb-6">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Aisha Rahman" class="w-16 h-16 rounded-full object-cover shadow-2xl mr-4">
+          <div>
+            <h4 class="font-bold text-xl text-gray-900 dark:text-white">Aisha Rahman</h4>
+            <span class="text-accent font-semibold">Dubai, UAE</span>
+          </div>
+        </div>
+        <div class="flex mb-6">
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg class="w-6 h-6 text-accent fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="text-lg text-gray-700 dark:text-gray-300 italic leading-relaxed mb-8">millol lil5er TunTravel min a7sen les agences elli rithom fi 7yeti ba3ed tajrba bitbi3a . best services</p>
+        <div class="w-20 h-1 bg-gradient-to-r from-accent to-transparent rounded-full"></div>
+      </div>
+    </div>
+  </div>    
+</section>
+      </div>
+
+  </div>
+</section>
+
+<!-- Reservation Form Section -->
+<section id="reservation" class="py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-primary to-indigo-900 relative overflow-hidden">
+  <div class="absolute inset-0 bg-black/20"></div>
+  <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <!-- Form -->
+      <div class="animate-slide-up">
+        <div class="text-center lg:text-left mb-12 lg:mb-0">
+          <span class="inline-flex px-6 py-3 bg-white/20 backdrop-blur-sm text-white font-bold rounded-full text-lg mb-8 inline-block">✨ Quick Booking</span>
+          <h2 class="text-4xl lg:text-5xl font-black text-white mb-6">Book Your Dream Trip Now</h2>
+          <p class="text-xl text-blue-100 opacity-90 leading-relaxed max-w-lg">Get instant confirmation and start your adventure within 24 hours</p>
+        </div>
+        
+        <form class="space-y-6 max-w-lg mx-auto lg:mx-0" id="reservation-form">
+          <div>
+            <label class="block text-white font-semibold mb-3">Full Name</label>
+            <input type="text" name="name" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white placeholder-blue-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/30 transition-all duration-300 text-lg" placeholder="Your name">
+          </div>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-white font-semibold mb-3">Email</label>
+              <input type="email" name="email" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white placeholder-blue-200 focus:border-secondary focus:outline-none focus:ring-4 focus:ring-secondary/30 transition-all duration-300 text-lg" placeholder="adresse@example.com">
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-3">Phone</label>
+              <input type="tel" name="phone" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white placeholder-blue-200 focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/30 transition-all duration-300 text-lg" placeholder="+1 (555)  21561561488454">
+            </div>
+          </div>
+          
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-white font-semibold mb-3">Destination</label>
+              <select name="destination" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white focus:border-secondary focus:outline-none focus:ring-4 focus:ring-secondary/30 transition-all duration-300 text-lg appearance-none bg-no-repeat bg-right">
+                <option value="">Select Destination</option>
+                <option value="sidi-bou-said">Sidi Bou Said</option>
+                <option value="djerba">Djerba Island</option>
+                <option value="sahara">Sahara Desert</option>
+                <option value="carthage">Carthage</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-white font-semibold mb-3">Travelers</label>
+              <select name="travelers" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white focus:border-accent focus:outline-none focus:ring-4 focus:ring-accent/30 transition-all duration-300 text-lg appearance-none bg-no-repeat bg-right">
+                <option value="">Number</option>
+                <option value="1">1 Person</option>
+                <option value="2">2 People</option>
+                <option value="3">3 People</option>
+                <option value="4">4+ People</option>
+              </select>
+            </div>
+          </div>
+          
+          <div>
+            <label class="block text-white font-semibold mb-3">Travel Date</label>
+            <input type="date" name="date" required class="w-full px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/30 rounded-2xl text-white focus:border-secondary focus:outline-none focus:ring-4 focus:ring-secondary/30 transition-all duration-300 text-lg" min="2024-01-01">
+          </div>
+          
+          <button type="submit" class="w-full px-8 py-6 bg-gradient-to-r from-accent to-orange-500 text-white font-black text-xl rounded-3xl shadow-2xl hover:shadow-3xl hover:scale-105 hover:from-orange-500 hover:to-red-500 transition-all duration-300 uppercase tracking-wide letter-spacing-1">
+            Book Now - Secure Your Spot
+            <svg class="inline ml-3 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </button>
+        </form>
+      </div>
+      
+      <!-- Stats -->
+      <div class="space-y-12 lg:pl-12">
+        <div class="text-center lg:text-left">
+          <div class="text-6xl lg:text-7xl font-black text-accent mb-6">40%</div>
+          <p class="text-2xl text-white/90 font-semibold">Discount</p>
+          <p class="text-blue-100 mt-2">Summer Special Offer</p>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-8">
+          <div class="text-center lg:text-left">
+            <div class="text-4xl font-black text-white mb-3">24h</div>
+            <p class="text-blue-100 font-semibold">Response Time</p>
+          </div>
+          <div class="text-center lg:text-left">
+            <div class="text-4xl font-black text-white mb-3">100%</div>
+            <p class="text-blue-100 font-semibold">Refundable</p>
+          </div>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <h3 class="text-2xl font-bold text-white mb-4">Payment Methods</h3>
+          <div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.aXk5GglIGPJhL_xnPphbqQHaEK?w=1536&h=864&rs=1&pid=ImgDetMain&o=7&rm=3Visa" alt="Visa" class="h-10 rounded-lg shadow-lg hover:scale-110 transition-transform">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.EHP1N9SXxmnarV0KDdYURAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Mastercard" class="h-10 rounded-lg shadow-lg hover:scale-110 transition-transform">
+            <img src="https://toppng.com/uploads/preview/paypal-logo-wihout-background-11660816817hbvktbflnv.png" alt="PayPal" class="h-10 rounded-lg shadow-lg hover:scale-110 transition-transform">
+            <img src="https://th.bing.com/th/id/R.13edfb0cc071169f473ca5ecd18e79a1?rik=CfZT0vHhT1ZhEw&pid=ImgRaw&r=0" alt="Apple Pay" class="h-10 rounded-lg shadow-lg hover:scale-110 transition-transform">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contact page -->
+
+    <footer id="contact" class="bg-gradient-to-b from-blue-900 to-blue-950 text-white py-16 px-4 md:px-8 lg:px-12">
+  <div class="max-w-7xl mx-auto">
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+      
+      <!-- Left Column - Contact -->
+      <div class="lg:col-span-1">
+        <h3 class="text-2xl font-bold mb-4 relative">
+          Contact
+          <span class="absolute -bottom-1 left-0 w-12 h-1 bg-orange-500 rounded-full"></span>
+        </h3>
+        <div><p class="text-black-100">TunTravelAgence.@travelagency.com</p></div>
+        <div class="space-y-3 text-gray-300">
+          <p class="font-medium">Adresse:</p>
+          <p>Immeuble El ons, Route Touristique</p>
+          <p>El Kantaoui 4089 Sousse</p>
+          <p class="font-medium">Tél: <span class="font-bold text-orange-400">+216 36 290 000</span></p>
+          <p class="font-medium">Fixe: <span class="font-bold text-orange-400">+216 73 817 111</span></p>
+        </div>
+      </div>
+
+      <!-- Middle Columns - Links -->
+      <div class="lg:col-span-2 space-y-8">
+        
+        <!-- Liens utiles -->
+        <div>
+          <h4 class="text-xl font-bold mb-4 relative flex items-center justify-between">
+            Liens utiles
+            <svg class="w-5 h-5 text-orange-400 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+            <span class="absolute -bottom-1 left-0 w-20 h-1 bg-orange-500 rounded-full"></span>
+          </h4>
+          <div class="space-y-2 text-gray-300 text-sm">
+            <p class="hover:text-orange-400 transition-colors cursor-pointer"><a href="#about"> À propos</a></p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer"><a href="#services">Services</a></p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer"><a href="#destinations"> Destinations</a></p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer"><a href="#contact"> Contact</a></p>
+          </div>
+        </div>
+
+        <!-- Nos produits -->
+        <div>
+          <h4 class="text-xl font-bold mb-4 relative flex items-center justify-between">
+            Nos produits
+            <svg class="w-5 h-5 text-orange-400 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+            <span class="absolute -bottom-1 left-0 w-20 h-1 bg-orange-500 rounded-full"></span>
+          </h4>
+          <div class="space-y-2 text-gray-300 text-sm">
+            <p class="hover:text-orange-400 transition-colors cursor-pointer">Voyages organisés</p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer">Circuits</p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer">Billetterie</p>
+            <p class="hover:text-orange-400 transition-colors cursor-pointer">Hôtels</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Payment Section -->
+      <div class="lg:col-span-1">
+        <h4 class="text-xl font-bold mb-6 relative">
+          PAIEMENT SÉCURISÉ
+          <span class="absolute -bottom-1 left-0 w-28 h-1 bg-orange-500 rounded-full"></span>
+        </h4>
+        <div class="flex flex-wrap gap-3">
+          <div class="w-16 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer border border-white/20">
+            <span class="text-xs font-bold text-gray-200">Visa</span>
+          </div>
+          <div class="w-16 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer border border-white/20">
+            <span class="text-xs font-bold text-gray-200">CIB</span>
+          </div>
+          <div class="w-16 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer border border-white/20">
+            <span class="text-xs font-bold text-gray-200">Mastercard</span>
+          </div>
+          <div class="w-16 h-10 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/20 transition-all duration-300 hover:scale-105 cursor-pointer border border-white/20">
+            <span class="text-xs font-bold text-gray-200">Virement</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Social Media Section -->
+    <div class="border-t border-white/10 pt-12">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        <!-- Social Icons -->
+        <div class="flex space-x-4">
+          <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-orange-500 hover:scale-110 transition-all duration-300 border border-white/20 hover:border-orange-400 group">
+            <svg class="w-6 h-6 fill-current text-gray-200 group-hover:text-white" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-orange-500 hover:scale-110 transition-all duration-300 border border-white/20 hover:border-orange-400 group">
+            <svg class="w-6 h-6 fill-current text-gray-200 group-hover:text-white" viewBox="0 0 24 24">
+              <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+            </svg>
+          </a>
+          <a href="#" class="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center hover:bg-orange-500 hover:scale-110 transition-all duration-300 border border-white/20 hover:border-orange-400 group">
+            <svg class="w-6 h-6 fill-current text-gray-200 group-hover:text-white" viewBox="0 0 24 24">
+              <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+            </svg>
+          </a>
+          
+        </div>
+</body>
+<script src="app.js"></script>
+</html>
+</html>
